@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ejercicio1.xsd"> 
+    <capitulo> 
+        <titulo>Introduccion</titulo> 
+    </capitulo> 
+    <capitulo> 
+        <titulo>Historia</titulo> 
+        <subcapitulo> 
+            <titulo>Parte 1</titulo> 
+        </subcapitulo> 
+        <subcapitulo> 
+            <titulo>Parte 2</titulo> 
+        </subcapitulo> 
+    </capitulo> 
+    <capitulo> 
+        <titulo>Index</titulo> 
+    </capitulo> 
+</libro> 

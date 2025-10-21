@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<carta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ejercicio3.xsd">
+    <helado>
+        <sabor tipo_sabor="chocolate">Chocolate</sabor>
+        <tipo tipo_helado="cono">Cono</tipo>
+        <tamaño tipo_tamaño="grande">Grande</tamaño>
+    </helado>
+    <helado>
+        <sabor tipo_sabor="fresa">Fresa</sabor>
+        <tipo tipo_helado="tarrina">Tarrina</tipo>
+        <tamaño tipo_tamaño="mediano">Mediano</tamaño>
+    </helado>
+    <helado>
+        <sabor tipo_sabor="limón">Limón</sabor>
+        <tipo tipo_helado="cono">Cono</tipo>
+        <tamaño tipo_tamaño="pequeño">Pequeño</tamaño>
+    </helado>
+</carta>

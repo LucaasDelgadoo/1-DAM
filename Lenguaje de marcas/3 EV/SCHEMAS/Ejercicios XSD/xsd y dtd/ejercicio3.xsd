@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="carta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="helado" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sabor" type="tipo_sabor"/>
+              <xs:element name="tipo" type="tipo_helado"/>
+              <xs:element name="tamaño" type="tipo_tamaño"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="tipo_sabor">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="chocolate"/>
+      <xs:enumeration value="fresa"/>
+      <xs:enumeration value="vainilla"/>
+      <xs:enumeration value="limón"/>
+      <xs:enumeration value="menta"/>
+      <xs:enumeration value="caramelo"/>
+      <xs:enumeration value="coco"/>
+      <xs:enumeration value="mango"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipo_helado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="cono"/>
+      <xs:enumeration value="tarrina"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipo_tamaño">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="grande"/>
+      <xs:enumeration value="mediano"/>
+      <xs:enumeration value="pequeño"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

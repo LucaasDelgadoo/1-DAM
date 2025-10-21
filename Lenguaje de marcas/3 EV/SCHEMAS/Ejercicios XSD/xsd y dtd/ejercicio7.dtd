@@ -1,0 +1,19 @@
+<!ELEMENT CD (artista, titulo, sello, referencia, anyo, pais, formato, observaciones?, genero+, estilo+, canciones)>
+<!ELEMENT artista (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT sello (#PCDATA)>
+<!ELEMENT referencia (#PCDATA)>
+<!ELEMENT anyo (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ELEMENT formato (#PCDATA)>
+<!ELEMENT observaciones (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>
+<!ELEMENT estilo (#PCDATA)>
+<!ELEMENT canciones (contenido_cd+)>
+<!ELEMENT contenido_cd (cancion+)>
+<!ATTLIST contenido_cd numero CDATA #REQUIRED>
+<!ELEMENT cancion (titulo, duracion)>
+<!ATTLIST cancion numero CDATA #REQUIRED>
+<!ELEMENT duracion (minutos, segundos)>
+<!ELEMENT minutos (#PCDATA)>
+<!ELEMENT segundos (#PCDATA)>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libro [
+ <!ELEMENT libro EMPTY>
+ <!ATTLIST libro autor CDATA #REQUIRED> <!-- Error: El atributo 'autor' está definido como NMTOKEN, pero puede contener más de un token (como espacios). Corrección: Cambiar NMTOKEN a CDATA. -->
+]>
+<libro autor="Mario Vargas Llosa" /> <!-- Corrección: Cambio "LLosa" por "Llosa" para corregir el error ortográfico. -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventores [
+ <!ELEMENT inventores (inventor*)> <!-- Error: Faltaba la definición del contenedor "inventores". Corrección: Añadir elemento inventores que contenga varios "inventor". -->
+ <!ELEMENT inventor EMPTY>
+ <!ATTLIST inventor invento CDATA #REQUIRED>
+ <!ATTLIST inventor nombre ID #REQUIRED>
+]>
+<inventores>
+ <inventor nombre="adler" invento="Mando a distancia" /> <!-- Corrección: Cambiar valor de "nombre" a un único ID (sin espacios), ya que debe ser único. -->
+ <inventor nombre="biro" invento="Bolígrafo" /> <!-- Corrección: Cambiar "nombre" para cumplir con las restricciones de ID. -->
+ <inventor nombre="cochran" invento="Lavaplatos" /> <!-- Corrección: Cambiar "nombre" a un identificador único. -->
+ <inventor nombre="fuego" invento="Fuego" /> <!-- Error: Faltaba el atributo "nombre". Corrección: Añadir un identificador único para este invento. -->
+</inventores>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cosasPorHacer [
+ <!ELEMENT cosasPorHacer (cosa*)> <!-- Error: No permitía múltiples elementos "cosa". Corrección: Cambiar "cosa" por "cosa*". -->
+ <!ELEMENT cosa (#PCDATA)> <!-- Error: El contenido no puede estar vacío si hay texto en su interior. Corrección: Cambiar EMPTY por (#PCDATA). -->
+ <!ATTLIST cosa fecha CDATA #REQUIRED>
+ <!ATTLIST cosa asunto CDATA #IMPLIED> <!-- Corrección: El atributo "asunto" debe ser opcional usando #IMPLIED. -->
+ <!ATTLIST cosa fechaLimite CDATA #REQUIRED>
+]>
+<cosasPorHacer>
+ <cosa fecha="20 de febrero de 2021" fechaLimite="1 de marzo de 2021">
+ Preparar ejercicios de DTDs <!-- Corrección: El texto ahora es válido al cambiar el tipo de "cosa" a (#PCDATA). -->
+ </cosa>
+ <cosa fecha="21 de febrero de 2021" fechaLimite="5 de marzo de 2021">
+ Preparar tema XSLT
+ </cosa>
+</cosasPorHacer>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resoluciones [
+ <!ELEMENT resoluciones (resolucion*)> <!-- Error: La raíz debía permitir múltiples elementos "resolucion". Corrección: Cambiar EMPTY por (resolucion*). -->
+ <!ELEMENT resolucion EMPTY>
+ <!ATTLIST resolucion nombre CDATA #REQUIRED> <!-- Error: "NMTOKEN" no permite espacios. Corrección: Cambiar a CDATA. -->
+ <!ATTLIST resolucion alto CDATA #REQUIRED>
+ <!ATTLIST resolucion ancho CDATA #REQUIRED>
+]>
+<resoluciones>
+ <resolucion nombre="VGA" alto="480" ancho="640" />
+ <resolucion nombre="XGA" alto="768" ancho="1024" /> <!-- Corrección: Asegurar que "alto" y "ancho" estén en orden numérico correcto. -->
+ <resolucion nombre="HD1080" alto="1080" ancho="1920" /> <!-- Corrección: Cambiar "HD 1080" a un formato válido para un único token sin espacios. -->
+</resoluciones>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE albumesMortadelo [
+ <!ELEMENT albumesMortadelo (album*)>
+ <!ELEMENT album (nombre, fecha)>
+ <!ATTLIST album nombre CDATA #REQUIRED>
+ <!ATTLIST album fecha CDATA #REQUIRED> <!-- Error: La lista de valores permitidos no debe restringir tanto. Corrección: Cambiar por CDATA. -->
+]>
+<albumesMortadelo>
+ <album nombre="El sulfato atómico" fecha="1969"/>
+ <album nombre="La caja de diez cerrojos" fecha="1971"/>
+ <album nombre="El otro yo del profesor Bacterio" fecha="1973"/>
+ <album nombre="Los cacharros majaretas" fecha="1974"/>
+</albumesMortadelo>

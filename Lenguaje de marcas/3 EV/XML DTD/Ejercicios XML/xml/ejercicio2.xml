@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE empleados [
+    <!ELEMENT empleados (empleado+)>
+    <!ELEMENT empleado (nombre, apellidos, puesto, permanencia, proyectos?)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT apellidos (#PCDATA)>
+    <!ELEMENT puesto (#PCDATA)>
+    <!ATTLIST puesto categoria CDATA #REQUIRED>
+    <!ELEMENT permanencia EMPTY>
+    <!ATTLIST permanencia tiempo CDATA #REQUIRED>
+    <!ELEMENT proyectos (proyecto+)>
+    <!ELEMENT proyecto (#PCDATA)>
+    <!ATTLIST proyecto tipo CDATA #REQUIRED>
+]>
+<empleados>
+    <empleado>
+        <nombre>Alejandro</nombre>
+        <apellidos>Martín Ledesma</apellidos>
+        <puesto categoria="senior">programador</puesto>
+        <permanencia tiempo="10" />
+        <proyectos>
+            <proyecto tipo="curso">Curso XML</proyecto>
+            <proyecto tipo="web">GPM</proyecto>
+        </proyectos>
+    </empleado>
+    <empleado>
+        <nombre>Marta</nombre>
+        <apellidos>Marcos Lasa</apellidos>
+        <puesto categoria="auxiliar">programador</puesto>
+        <permanencia tiempo="0" />
+    </empleado>
+</empleados>

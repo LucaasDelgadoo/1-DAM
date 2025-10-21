@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Libro" type="tipoLibro" />
+
+    <xs:complexType name="tipoLibro">
+        <xs:sequence>
+            <xs:element name="Titulo" type="xs:string" />
+            <xs:element name="Contenido" type="tipoContenido" maxOccurs="unbounded" />
+            <xs:element name="Copyright" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoContenido">
+        <xs:sequence>
+            <xs:element name="Capitulo" type="tipoCapitulo" maxOccurs="unbounded" />
+            <xs:element name="Separacion" minOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoCapitulo">
+        <xs:sequence>
+            <xs:element name="Tema" type="xs:string" />
+            <xs:element name="Seccion" type="tipoSeccion" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="materia" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="tipoSeccion">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="apartados" type="xs:integer" use="required" />
+                <xs:attribute name="dificil" type="xs:boolean" use="required" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+</xs:schema>

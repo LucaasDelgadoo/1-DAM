@@ -1,0 +1,20 @@
+<!ELEMENT Recetario (Autor, Receta+, Fecha)>
+<!ELEMENT Autor (#PCDATA)>
+<!ELEMENT Receta (Nombre, Origen?, Ingredientes, Elaboracion, Referencia?)>
+<!ATTLIST Receta 
+          dificultad CDATA #REQUIRED
+          coste CDATA #REQUIRED
+          NivelCalorias CDATA #REQUIRED
+          tipo CDATA #IMPLIED>
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Origen (#PCDATA)>
+<!ELEMENT Ingredientes (Ingrediente+)>
+<!ELEMENT Ingrediente (NombreI, Cantidad)>
+<!ATTLIST Ingrediente 
+          medida CDATA #IMPLIED>
+<!ELEMENT NombreI (#PCDATA)>
+<!ELEMENT Cantidad (#PCDATA)>
+<!ELEMENT Elaboracion (Paso+)>
+<!ELEMENT Paso (#PCDATA)>
+<!ELEMENT Referencia (#PCDATA)>
+<!ELEMENT Fecha (#PCDATA)>

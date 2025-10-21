@@ -1,0 +1,67 @@
+<cd titulo="Título del CD">
+    <songs>
+        <song length="6:20" anio="1978">
+            <title>Hot Cop</title>
+            <composers>
+                <composer>
+                    <nombre>Henry</nombre>
+                    <apellidos>Beelo</apellidos>
+                </composer>
+            </composers>
+            <producers>
+                <producer>
+                    <nombre>Jacques</nombre>
+                    <apellidos>Morali</apellidos>
+                </producer>
+            </producers>
+            <publisher>PolyGram</publisher>
+            <artists>
+                <artist>Village People</artist>
+            </artists>
+        </song>
+        <song length="4:35" anio="1982">
+            <title>Electric Dreams</title>
+            <composers>
+                <composer>
+                    <nombre>Giorgio</nombre>
+                    <apellidos>Moroder</apellidos>
+                </composer>
+                <composer>
+                    <nombre>Philip</nombre>
+                    <apellidos>Oakey</apellidos>
+                </composer>
+            </composers>
+            <producers>
+                <producer>
+                    <nombre>Harold</nombre>
+                    <apellidos>Faltermeyer</apellidos>
+                </producer>
+            </producers>
+            <publisher>Virgin Records</publisher>
+            <artists>
+                <artist>Philip Oakey</artist>
+                <artist>Giorgio Moroder</artist>
+            </artists>
+        </song>
+        <song length="5:10" anio="1991">
+            <title>Wind of Change</title>
+            <composers>
+                <composer>
+                    <nombre>Klaus</nombre>
+                    <apellidos>Meine</apellidos>
+                </composer>
+            </composers>
+            <producers>
+                <producer>
+                    <nombre>Keith</nombre>
+                    <apellidos>Olsen</apellidos>
+                </producer>
+            </producers>
+            <publisher>Mercury Records</publisher>
+            <artists>
+                <artist>Scorpions</artist>
+            </artists>
+        </song>
+    </songs>
+    <fecha dia="DD" mes="MM" anio="YYYY" />
+</cd>
