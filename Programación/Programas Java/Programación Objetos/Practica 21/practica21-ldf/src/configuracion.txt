@@ -1,0 +1,1 @@
+Ruta Base de datos: jdbc:sqlite:C:\Users\lucas.delfer\Desktop\ECLIPSE\SQLiteDatabaseBrowserPortable\practica21.db
