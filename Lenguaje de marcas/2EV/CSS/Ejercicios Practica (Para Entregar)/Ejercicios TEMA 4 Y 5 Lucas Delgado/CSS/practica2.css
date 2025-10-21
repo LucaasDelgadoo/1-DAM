@@ -1,0 +1,15 @@
+h1 { color: teal;} /* la programacion orientada a objetos */
+body > p > strong { color: red; }/* un conjunto... */
+p > .destacado { color: orange; }/* mas faciles... */
+h2 { color: blue; }/* es decir */
+a > em { color: red; }/* enlace */
+p > .especial { color: orange; }/* unidades indivisibles */
+table ,tr, td{ border: 1px solid black; }/* marcado de la tabla */
+table > caption { color: blue; }/* conceptos fundamentales */
+tr > .especial { color: orange; }/* concepto-definicion */
+tr > td { color: green; }/* clase-objeto */
+tr > th { color: red; }/* concepto-definicion */
+tr > td > strong { color: orange; }/* hereda */
+#adicional { color: olive; }/* los dos parrafos */
+#especial { color: fuchsia; }/* el aislamniento... */
+#adicional > p > a { color: green; }/* leguajes */

@@ -1,0 +1,55 @@
+body {
+    background-image: url('../img/fondo.jpg');
+    background-attachment: fixed;
+}
+
+.contenedor {
+    background-color: rgba(255, 255, 200, 0.9);
+    padding: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+h1, h2, h3 {
+    padding: 1rem;
+    border-bottom: 5px dotted #e74c3c;
+    background-color: lightsalmon;
+}
+
+a {
+    margin-top: 1em;
+    padding: 1em;
+    border: 5px solid #2ecc71;
+}
+
+ul {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+li {
+    margin: 0.2em;
+    padding: 1em;
+    border: 1px solid orange;
+}
+
+li:first-child {
+    margin: 2px;
+    padding: 20px;
+}
+
+p span, p del, p em, p strong {
+    border-top: 2px dashed cornflowerblue;
+    border-bottom: 2px dashed cornflowerblue;
+    background-color: aliceblue;
+}
+
+blockquote {
+    margin: 1em 0em;
+    padding: 0.8em;
+    border: 4px double #e67e22;
+}

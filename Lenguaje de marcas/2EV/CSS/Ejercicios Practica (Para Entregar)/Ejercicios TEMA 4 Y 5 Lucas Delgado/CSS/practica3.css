@@ -1,0 +1,34 @@
+body {
+    font-size: 16px;
+}
+
+.udRelativa p {
+    font-size: 10px;
+}
+
+.udRelativa .em {
+    font-size: 2em; /* Relativo al tamaño del texto circundante */
+}
+
+.udRelativa .rem {
+    font-size: 2rem; /* Relativo al tamaño del elemento raíz HTML */
+}
+
+.fontFamily {
+    font-family: 'Arial';
+}
+
+.propiedadesFuente {
+    font: bold italic 24px Arial; /* Utiliza la propiedad shorthand font */
+}
+
+.propiedadesTexto {
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: red;
+    text-decoration: underline;
+}

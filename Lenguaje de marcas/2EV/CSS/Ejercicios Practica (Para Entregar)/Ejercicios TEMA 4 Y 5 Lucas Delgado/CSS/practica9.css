@@ -1,0 +1,91 @@
+* {
+    border: none;
+}
+.articulo h2 {
+    background-color: #D2691E;
+    padding: 0.2em;
+}
+#pie {
+    border-top: 1px solid #C5C5C5;
+    border-bottom: 1px solid #C5C5C5;
+    background-color: #DCDCDC;
+}
+ul, ul li { 
+    margin: 0; 
+    padding: 0; 
+    list-style: none; 
+}
+h1, h2, h3, p, form { 
+    margin: 0; 
+    padding: 0; 
+}
+h1 {
+    color: red;
+}
+h2 {
+    color: orange;
+}
+h3 {
+    color: green
+}
+em {
+    color: blue
+}
+/* anchura */
+#contenedor {
+    border: none;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+/* bordes */
+#cabecera, #menu, #lateral, #contenido , #pie {
+    border: 2px solid #777;
+}
+/* posicionamiento */
+#lateral { 
+    float: left; 
+    width: 20%; 
+}
+.clear { 
+    clear: both; 
+}
+#contenido { 
+    float: right; 
+    width: 76%; 
+}
+#cabecera #logo { 
+    float: left; 
+}
+#cabecera #buscador { 
+    float: right; 
+}
+#menu ul #menu_principal li { 
+    display: inline; 
+    float: left; 
+}
+#pie .copyright { 
+    float: right; 
+}
+#cabecera {
+    padding: 1em;
+}
+#menu {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #004C99;
+    background-image: url('../img/fondo_menu.gif');
+}
+#publicidad, #contenido {
+    padding: 0.5em;
+}
+
+.articulo {
+    margin: 1em;
+}
+#publicidad {
+    margin-top: 1em;
+    border: 1px dashed #CC6600;
+    background-color: #F0E68C;
+}
+

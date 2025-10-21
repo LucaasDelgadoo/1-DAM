@@ -1,0 +1,22 @@
+body {
+    font-family: Arial;
+}
+
+h3 {
+    font-variant: small-caps;
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    text-indent: 50%;
+}
+
+p:last-of-type {
+    word-spacing: 10px;
+    text-shadow: 2px 2px 4px red;
+}
+
+  

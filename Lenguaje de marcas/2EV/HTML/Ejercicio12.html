@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ejercicio 12</title>
+  </head>
+<body>
+    <h2>Rellena tu CV</h2>
+    <form action="insertar_cv.php" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <p>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" maxlength="30" size="20"/><br/>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" maxlength="30" size="50"/><br />
+            </p>
+            <p>
+                <label for="dni">DNI:</label><br />
+                <input type="text" id="dni" name="dni" maxlength="9" size="12"/>
+                <label for="foto">Incluir mi foto:</label>
+                <input type="file" id="foto" name="foto"/><br /><br />
+            </p>
+            <p>
+                <label for="sexo">Sexo:</label><br />
+                <input type="radio" id="hombre" name="sexo" value="hombre"/> Hombre <br/>
+                <input type="radio" id="mujer" name="sexo" value="mujer"/> Mujer<br/>
+            </p>
+            <p>
+                <label for="provincia">Provincia:</label><br />
+                <select id="provincia" name="provincia">
+					<option value="0">- selecciona -</option>
+                    <option value="a">Provincia A</option>
+                    <option value="b">Provincia B</option>
+                    <option value="c">Provincia C</option>
+                </select><br/>
+                <label for="fecha_nacimiento">Fecha de nacimiento:</label><br />
+                <select id="dia" name="dia">
+					<option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    
+                </select>
+				de
+                <select id="mes" name="mes">
+                    <option value="enero">Enero</option>
+                    <option value="febrero">Febrero</option>
+                    
+                </select>
+				de
+                <select id="anio" name="anio">
+					<option value=""></option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                   
+                </select><br /><br />
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Datos para suscripciones</legend>
+            <p>
+                <label for="temas_interes">Temas de interés:</label><br />
+                <select id="temas_interes" name="temas_interes" multiple="multiple">
+                    <option value="db">Administración de bases de datos</option>
+                    <option value="analisis">Análisis y programación</option>
+                    <option value="arquitectura">Arquitectura</option>
+                    <option value="calidad">Calidad</option>
+                    <option value="erp">ERP, CRM, Business Intelligence</option>
+                </select>
+                <input type="checkbox" id="boletin" name="boletin" checked="checked" />
+                <label for="boletin">Suscribirme al boletín de novedades</label><br /><br />
+            </p>
+        </fieldset>
+        <p>
+            <button type="submit">Guardar cambios</button>
+            <button type="reset">Borrar datos introducidos</button>
+        </p>
+    </form>
+</body>
+</html>

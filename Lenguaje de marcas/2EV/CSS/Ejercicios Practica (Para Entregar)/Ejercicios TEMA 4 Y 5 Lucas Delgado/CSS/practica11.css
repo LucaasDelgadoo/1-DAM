@@ -1,0 +1,169 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+header {
+  background: #77b5fe;
+  color: #fff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #77b5fe 3px solid;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header ul {
+  padding: 0;
+  list-style: none;
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header #branding {
+  float: left;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+header .highlight, header .current a {
+  color: #e8491d;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #cccccc;
+  font-weight: bold;
+}
+
+figure {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
+hgroup {
+  float: left;
+  margin: 0;
+}
+
+header h1, header h2 {
+  margin: 0 0 10px 0;
+}
+
+header img#cv {
+  float: right;
+  width: 80px;
+}
+
+section {
+  margin: 20px 0;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin: -10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+.icon {
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.grid_16 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid_8 {
+  width: 50%;
+}
+
+.grid_8 img.icon {
+  width: 30px;
+}
+
+.values span {
+  display: block;
+  background: #e8491d;
+  height: 10px;
+  margin-top: 5px;
+}
+
+.experiences ul, .training ul, .information ul {
+  list-style: none;
+  padding: 0;
+}
+
+.experiences ul li, .training ul li, .information ul li {
+  margin-bottom: 15px;
+}
+
+.experiences h4, .training h4, .information h4 {
+  margin-bottom: 5px;
+}
+
+.experiences .site, .training .site, .information .site {
+  font-weight: bold;
+  color: #333;
+}
+
+.experiences .date, .training .date, .information .date {
+  font-style: italic;
+}
+
+.formation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.information ul {
+  list-style: none;
+  padding: 0;
+}
+
+.information ul li {
+  margin-bottom: 10px;
+}
