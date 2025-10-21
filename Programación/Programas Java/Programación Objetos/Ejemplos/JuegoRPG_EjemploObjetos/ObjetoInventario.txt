@@ -1,0 +1,42 @@
+package JuegoRPG;
+public class ObjetoInventario {
+
+	public String nombre;
+	public int bonusFuerza;
+	public int bonusInteligencia;
+	public int bonusVoluntad;
+	public int bonusDestreza;
+	public float probabilidadCritico;
+	public String rutaImagen;
+	public boolean equipado;
+	
+	public ObjetoInventario (String nombre, int bonusFuerza,int bonusInteligencia, 
+			int bonusVoluntad, int bonusDestreza, float probabilidadCritico, String rutaImagen) {
+		
+		this.nombre = nombre;
+		this.bonusFuerza = bonusFuerza;
+		this.bonusInteligencia = bonusInteligencia;
+		this.bonusVoluntad = bonusVoluntad;
+		this.bonusDestreza = bonusDestreza;
+		this.probabilidadCritico = probabilidadCritico;
+		this.rutaImagen = rutaImagen;
+		this.equipado = false;
+
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

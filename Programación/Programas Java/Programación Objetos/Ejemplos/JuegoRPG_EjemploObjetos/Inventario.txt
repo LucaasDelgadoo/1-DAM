@@ -1,0 +1,32 @@
+package JuegoRPG;
+
+public class Inventario {
+
+	public ObjetoInventario[] elementos;
+	public int tamano;
+	public int numElementos;
+	
+	public Inventario (int tamano) {
+		this.tamano = tamano;
+		this.elementos = new ObjetoInventario[tamano];
+		numElementos = 0;
+		
+	}
+	
+	public boolean anadirElemento (ObjetoInventario elemento) {
+		if (numElementos >= this.tamano) {
+			return false;
+		} else {
+			elementos[numElementos] = elemento;
+			numElementos++;
+			return true;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+}

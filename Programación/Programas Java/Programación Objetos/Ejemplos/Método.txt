@@ -1,0 +1,71 @@
+package Objetos;
+
+public class Alumno {
+	
+	public String nombreCompleto; 
+	public int edad;
+	public int curso; 
+	public  String ciclo;
+	public double[] notasEvaluaciones;
+	public boolean esRepetidor;
+	public double notaFinalCurso;
+	
+	
+	
+	public double calcularNotaFinal() {
+		double notaFinal = 0;
+		notaFinal = (notasEvaluaciones[0] + notasEvaluaciones[1] + notasEvaluaciones[2]) / 3;
+		return notaFinal;
+		
+	}
+	
+	public void cambiarCiclo (int curso, String ciclo) {
+		
+		if (((curso == 1 || curso == 2) && (ciclo.equals("DAM")) || (ciclo.equals("DAW")) || (ciclo.equals("ASIR")))) {
+			this.curso = curso;
+			this.ciclo = ciclo;
+		}
+	}
+	
+	public void mostrarDatosAlumno () {
+		
+		System.out.println("DATOS DEL ALUMNO: " + nombreCompleto);
+		System.out.println("-----------------------------------------");
+		System.out.println("\n");
+		System.out.println("Edad: " + edad + " años");
+		
+		if (this.ciclo.equals("DAM") || this.ciclo.equals("DAW") || this.ciclo.equals("ASIR")) {
+			System.out.println("Ciclo: " + this.ciclo);
+		} else {
+			System.out.println("El ciclo introducido no existe");
+		}
+		
+		if (esRepetidor) {
+			
+			System.out.println("Curso: " + curso + ciclo + " (repite) ");
+		} else {
+			System.out.println("Curso" + curso + ciclo);
+		}
+		
+		System.out.println("Nota Final: " + calcularNotaFinal() + " (" + notasEvaluaciones[0] + " / " + notasEvaluaciones[1] + " / " + notasEvaluaciones[2] + ")");
+	}	
+	
+	public String ventana () {
+		
+		String datos = "DATOS DEL ALUMNO: " + nombreCompleto
+				+ "\n"
+				+ "-----------------------------------------" 
+				+ "\n"  
+				+ "Edad: " + edad + " años "
+				+ "\n"
+				+ "Ciclo: " + ciclo
+				+ "\n"
+				+ "Curso: " + curso + ciclo + " (repite) "
+				+ "\n"
+				+ "Nota Final: " + calcularNotaFinal() + " (" + notasEvaluaciones[0] + " / " + notasEvaluaciones[1] + " / " + notasEvaluaciones[2] + ")";
+				
+		return datos;
+	}
+}
+	
+	

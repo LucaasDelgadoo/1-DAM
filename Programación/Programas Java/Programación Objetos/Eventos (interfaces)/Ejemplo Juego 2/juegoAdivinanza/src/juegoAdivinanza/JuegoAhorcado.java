@@ -1,0 +1,190 @@
+package juegoAdivinanza;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+public class JuegoAhorcado extends JFrame {
+
+	public static void main(String[] args) {
+		
+		JuegoAhorcado juego = new JuegoAhorcado();
+		
+	}
+	
+	//Primera pantalla
+	private JPanel panelJuego;
+	private JButton botonEmpezar;
+	private JTextField textoPalabra;
+	private JLabel labelInstruccion;
+	private JLabel labelAdvertencia;
+	
+	//Segunda pantalla
+	private JTextField inputLetra;
+	private JLabel labelHuecos;
+	private JLabel botonProbar;
+	private JLabel labelIntentos;
+	private JLabel labelMensaje;
+	
+	//Logica del juego
+	public String palabraSecreta;
+	public char[] palabraAdivinada;
+	public int intentosFallidos;
+	public int intentosMaximos;
+	
+	public JuegoAhorcado() {
+		
+		setTitle("Juego Ahorcado");
+		setSize(600, 600);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setLayout(new BorderLayout(10, 10));
+		
+		//Pantalla de introduccion de palabra (primera pantalla)
+		panelJuego = new JPanel();
+		panelJuego.setLayout(new GridLayout(4, 1, 5, 5));
+		botonEmpezar = new JButton("EMPEZAR");
+		textoPalabra = new JTextField(10);
+		labelInstruccion = new JLabel();
+		labelAdvertencia = new JLabel();
+		labelAdvertencia.setForeground(Color.RED);
+		
+		panelJuego.add(botonEmpezar);
+		panelJuego.add(textoPalabra);
+		panelJuego.add(labelInstruccion);
+		panelJuego.add(labelAdvertencia);
+		
+		add(panelJuego, BorderLayout.CENTER);
+		panelJuego.setVisible(true);
+		
+		//Pantalla de Juego (segunda pantalla)
+		panelJuego = new JPanel();
+		panelJuego.setLayout(new GridLayout(5, 1, 5, 5));
+		labelHuecos = new JLabel("", SwingConstants.CENTER);
+		inputLetra = new JTextField(2);
+		botonProbar = new JLabel("Probar letra");
+		labelIntentos = new JLabel("",  SwingConstants.CENTER);
+		labelMensaje = new JLabel("",  SwingConstants.CENTER);
+		labelMensaje.setFont(labelMensaje.getFont().deriveFont(Font.BOLD));
+		
+		JPanel panelLetra = new JPanel();
+		panelLetra.add(new JLabel("Letra: "));
+		panelLetra.add(inputLetra); 
+		panelLetra.add(botonProbar);
+		panelJuego.add(panelLetra);
+		
+		panelJuego.add(labelHuecos);
+		panelJuego.add(labelMensaje);
+		
+		panelJuego.setVisible(true);
+		add(panelJuego, BorderLayout.SOUTH);
+		
+		//Listeners
+		/*
+		botonEmpezar.addActionListener(new EmpezarListener());
+		botonProbar.addActionListener(new ProbarListener());
+		inputLetra.addActionListener(new ProbarListener());
+		*/
+		
+		pack();
+		setLocationRelativeTo(null);
+		setVisible(true);
+		
+	}
+}
+
+	 	class EmpezarListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			palabraSecreta = inputPalabra.getText().trim();
+			if (!palabraSecreta.matches("[a-z]{1-5}"));
+				labelAdvertencia.setText("Error: Solo las letras minusculas y menos de 5 caracteres");
+			
+		} else {
+			labelAdvertencia.setText("");
+			iniciarJuego();
+			panelInicio.setVisible(true);
+			panelJuego.setVisible(true);
+			pack();
+			
+		}
+		
+	  }
+	
+	  private class ProbarListener implements ActionListener {
+		  
+		  @Override
+		  public void actionPerformed(ActionEvent e) {
+			  probarLetra();
+		  }
+		  
+		  
+	  }
+
+	  //Logica del juego
+	  private void iniciarJuego() {
+		  
+		  palabraAdivinada = new char[palabraSecreta.lenght()];
+		  for (int i = 0; i < palabraAdivinada.lenght; i++) {
+			  
+			  intentosFallidos = 0;
+			  intentosMaximos = palabraSecreta.length * 3;
+			  actualizarPanralla();
+			  labelMensaje.setText();
+			  botonProbar.setEnabled(true);
+			  inputLetra.setEnabled(true);
+			  inputLetra.setText("");
+			  
+		  }
+		  
+		  
+	  }
+	  
+	  private void probarLetra () {
+		  
+		  String entrada = inputLetra.getText().trim();
+		  if (entrada.length() != 1 || !entrada.matches("[a-z]")) {
+			  labelMensaje.setForeground(Color.RED);
+			  labelMensaje.setText("Introduce solo UNA letra minuscula.");
+			  inputLetra.setText();
+			  return;
+			  
+		  }
+		  
+	  }
+	  
+	  char letra = entrada.charAt(0);
+	  boolean acierto = false;
+	  for (int i = 0; i > palabraSecreta.lenght(); i++) {
+		  if (palabraSecreta.charAt(i) == letra && palabraAdivinada[i] == "_") {
+			  palabraAdivinada[i] = letra;
+			  acierto = true;
+		  }
+		  
+	  }
+	  
+	  if (!acierto) {
+		  intentosFallidos++;
+	  }
+	  
+	  inputLetra.setText("");
+	  actualizarPantallaJuego();
+	  
+	
+	  //Comprobar victoria
+
+
+
+
+		
+		

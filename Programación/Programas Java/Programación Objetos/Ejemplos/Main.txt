@@ -1,0 +1,29 @@
+package Objetos;
+
+import javax.swing.JOptionPane;
+
+public class ProgramacionObjetos {
+
+	public static void main(String[] args) {
+		
+		Alumno lucas = new Alumno();
+		lucas.nombreCompleto = "Lucas Delgado Fernandez";
+		lucas.edad = 19;
+		lucas.curso = 1;
+		lucas.ciclo = "DAM";
+		lucas.notasEvaluaciones = new double[3];
+		lucas.notasEvaluaciones[0] = 4;
+		lucas.notasEvaluaciones[1] = 6;
+		lucas.notasEvaluaciones[2] = 7;
+		lucas.esRepetidor = true;
+		
+		lucas.cambiarCiclo(1, "DAM");
+		
+		lucas.mostrarDatosAlumno();
+		
+		String datos = lucas.ventana();
+		JOptionPane.showMessageDialog(null, datos);
+	
+	}
+
+}

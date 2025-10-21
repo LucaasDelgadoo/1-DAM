@@ -1,0 +1,63 @@
+package JuegoRPG;
+public class JuegoAventura {
+
+	public static void main(String[] args) {
+		
+		Personaje theWanderer = new Personaje("Lucas", Personaje.CLASE_BARBARO, 9, 10, 10, 7);
+		System.out.println("Vida del personaje: " + theWanderer.vida);
+		System.out.println("Inteligencia del personaje: " + theWanderer.habilidades[Personaje.HAB_INTELIGENCIA]);
+		
+		ObjetoInventario cuchillo = new ObjetoInventario("Cuchillo de carnicero", 5, 0, 0, 2, 8.5f, "ruta imagen");
+		System.out.println("Encuentras y equipas " + cuchillo.nombre);
+		cuchillo.equipado = true;
+		
+		ObjetoInventario escudo = new ObjetoInventario("Escudo de maná", 0, 6, 4, 2, 0, "ruta imagen");
+		System.out.println("Encuentras " + escudo.nombre);
+		
+		Inventario inventario = new Inventario(10);
+		inventario.anadirElemento(cuchillo);
+		inventario.anadirElemento(escudo);
+		System.out.println("INVENTARIO\n"
+				+ "------------------------\n");
+		for (ObjetoInventario elemento : inventario.elementos) {
+			if (elemento != null) {
+				System.out.println(elemento.nombre + " " + (elemento.equipado ? "equipado" : ""));
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		 
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+}

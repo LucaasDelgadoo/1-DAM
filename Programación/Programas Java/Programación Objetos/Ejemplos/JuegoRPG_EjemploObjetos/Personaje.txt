@@ -1,0 +1,71 @@
+package JuegoRPG;
+public class Personaje {
+	
+	public static final int HAB_FUERZA = 0;
+	public static final int HAB_INTELIGENCIA = 1;
+	public static final int HAB_VOLUNTAD = 2;
+	public static final int HAB_DESTREZA = 3;
+	public static final int CLASE_BARBARO = 1;
+	public static final int CLASE_DRUIDA = 2;
+	public static final int CLASE_HECHICERO = 3;
+	public static final int CLASE_NIGROMANTE = 4;
+	public static final int CLASE_PICARO = 5;
+	
+
+	
+	public String nombre;
+	public int clase;
+	public int nivel;
+	public int[] habilidades;
+	public int vida;
+	public boolean modoInmortal;
+	
+
+	
+	public Personaje (String nombre, int clase, int fuerza, int inteligencia, int voluntad, int destreza) {
+		this.nombre = nombre;
+		this.clase = clase;
+		this.nivel = 0;
+		this.habilidades = new int[4];
+		this.habilidades[HAB_FUERZA] = fuerza;
+		this.habilidades[HAB_INTELIGENCIA] = inteligencia;
+		this.habilidades[HAB_VOLUNTAD] = voluntad;
+		this.habilidades[HAB_DESTREZA] = destreza;
+		this.modoInmortal = false;
+		
+		if (clase == CLASE_BARBARO || clase == CLASE_PICARO) {
+			this.vida = 120;
+		} else if (clase == CLASE_DRUIDA || clase == CLASE_HECHICERO) {
+			this.vida = 110;
+		} else if (clase == CLASE_NIGROMANTE) {
+			this.vida = 100;
+		}
+	
+	}
+	
+	
+	public boolean recibirAtaque (int ataque) {
+		boolean estaMuerto = false;
+		if (this.habilidades[HAB_DESTREZA] >= 9) {
+			ataque = (int) (ataque * 0.9);
+		}
+		
+		this.vida = ataque - this.vida;
+		if (this.vida <= 0 && !this.modoInmortal) {
+			this.vida = 0;
+			estaMuerto = true;
+		} else if (this.vida <= 0 && this.modoInmortal) {
+			this.vida = 1;
+		}
+		
+		return estaMuerto;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}

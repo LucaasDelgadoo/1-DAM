@@ -1,0 +1,43 @@
+package Objetos;
+
+import javax.swing.JOptionPane;
+
+public class JOptionPanePruebas {
+
+	public static void main(String[] args) {
+		
+		String[] opciones = {"Primero", "Segundo", "Tercero"};
+		String opcion = (String) JOptionPane.showInputDialog(null, "Elige una posicion",
+				"Posiciones de la Carrera", JOptionPane.QUESTION_MESSAGE, null, opciones, "");
+		
+		int adulto = 0;
+		JOptionPane.showConfirmDialog(null, "¿Eres mayor de edad?");
+		if (adulto == JOptionPane.OK_OPTION) {
+			System.out.println("El ususario ha seleccionado SÍ");
+		} else if (adulto == JOptionPane.NO_OPTION) {
+			System.out.println("El ususario ha seleccionado NO");
+		} else if (adulto == JOptionPane.CANCEL_OPTION) {
+			System.out.println("El ususario ha seleccionado Cancelar");
+		} else if (adulto == JOptionPane.CLOSED_OPTION) {
+			System.out.println("El ususario ha cerrado la ventana");
+		}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
