@@ -1,0 +1,89 @@
+import java.util.Scanner;
+
+public class Ejercicio2P4 {
+
+   
+    static Integer numero1 = null;
+    static Integer numero2 = null;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+
+        
+        do {
+           
+            System.out.println("=== Menú de Opciones ===");
+            System.out.println("1. Introducir números");
+            System.out.println("2. Sumar números");
+            System.out.println("3. Restar números");
+            System.out.println("4. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    introducirNumeros(sc);
+                    break;
+                case 2:
+                    if (verificarNumeros()) {
+                        sumarNumeros();
+                    } else {
+                        System.out.println("Error: Debe introducir los números primero.");
+                    }
+                    break;
+                case 3:
+                    if (verificarNumeros()) {
+                        restarNumeros();
+                    } else {
+                        System.out.println("Error: Debe introducir los números primero.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Saliendo del programa.");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Intente de nuevo.");
+            }
+
+        } while (opcion != 4); 
+        
+        sc.close();
+    }
+
+    
+    public static void introducirNumeros(Scanner sc) {
+        numero1 = introducirNumero(sc, "Introduzca el primer número (1-50): ");
+        numero2 = introducirNumero(sc, "Introduzca el segundo número (1-50): ");
+    }
+
+   
+    public static int introducirNumero(Scanner sc, String mensaje) {
+        int numero;
+        do {
+            System.out.print(mensaje);
+            numero = sc.nextInt();
+            if (numero < 1 || numero > 50) {
+                System.out.println("Número fuera de rango. Debe estar entre 1 y 50.");
+            }
+        } while (numero < 1 || numero > 50);
+        return numero;
+    }
+
+   
+    public static boolean verificarNumeros() {
+        return numero1 != null && numero2 != null;
+    }
+
+   
+    public static void sumarNumeros() {
+        int suma = numero1 + numero2;
+        System.out.println("La suma de los números es: " + suma);
+    }
+
+    
+    public static void restarNumeros() {
+        int resta = numero1 - numero2;
+        System.out.println("La resta de los números es: " + resta);
+    }
+}

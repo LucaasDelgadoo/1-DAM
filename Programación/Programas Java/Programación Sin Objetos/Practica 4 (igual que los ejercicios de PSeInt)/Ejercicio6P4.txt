@@ -1,0 +1,79 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Ejercicio6P4 {
+    //Lucas Delgado Practica 4
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int puntajeJugador = 0;
+        int puntajeMaquina = 0;
+        
+        for (int ronda = 1; ronda <= 5; ronda++) {
+            System.out.println("Ronda " + ronda + ": Elige una opción (0 = Piedra, 1 = Papel, 2 = Tijera): ");
+            int eleccionJugador = sc.nextInt();
+            
+            
+            int resultado = jugarRonda(eleccionJugador);
+            
+           
+            if (resultado == 1) {
+                System.out.println("Ganaste esta ronda.");
+                puntajeJugador++;
+            } else if (resultado == -1) {
+                System.out.println("La máquina ganó esta ronda.");
+                puntajeMaquina++;
+            } else {
+                System.out.println("Empate en esta ronda.");
+            }
+            
+            System.out.println("Puntaje actual - Jugador: " + puntajeJugador + " Máquina: " + puntajeMaquina);
+        }
+        
+        
+        if (puntajeJugador > puntajeMaquina) {
+            System.out.println("¡Felicidades! Ganaste la partida.");
+        } else if (puntajeMaquina > puntajeJugador) {
+            System.out.println("La máquina ganó la partida.");
+        } else {
+            System.out.println("La partida terminó en empate.");
+        }
+        
+        sc.close();
+    }
+    
+   
+    public static int jugarRonda(int eleccionJugador) {
+        int eleccionMaquina = azar(3); // Genera un número entre 0 y 2 para la elección de la máquina
+        
+        System.out.println("Elegiste: " + nombreEleccion(eleccionJugador));
+        System.out.println("La máquina eligió: " + nombreEleccion(eleccionMaquina));
+        
+       
+        if (eleccionJugador == eleccionMaquina) {
+            return 0; // Empate
+        } else if ((eleccionJugador == 0 && eleccionMaquina == 2) ||  // Piedra gana a Tijera
+                   (eleccionJugador == 1 && eleccionMaquina == 0) ||  // Papel gana a Piedra
+                   (eleccionJugador == 2 && eleccionMaquina == 1)) {  // Tijera gana a Papel
+            return 1; // Gana el jugador
+        } else {
+            return -1; // Gana la máquina
+        }
+    }
+    
+   
+    public static String nombreEleccion(int eleccion) {
+        switch (eleccion) {
+            case 0: return "Piedra";
+            case 1: return "Papel";
+            case 2: return "Tijera";
+            default: return "Desconocido";
+        }
+    }
+    
+    
+    public static int azar(int n) {
+        Random random = new Random();
+        return random.nextInt(n);
+    }
+}
