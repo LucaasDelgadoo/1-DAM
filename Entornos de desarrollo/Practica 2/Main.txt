@@ -1,0 +1,58 @@
+package Practica2;
+
+import javax.swing.JOptionPane;
+
+import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.commons.text.WordUtils;
+
+public class UsoLibrerias {
+
+	public static void main(String[] args) {
+	
+		final int NUMERO_OPCIONES = 7;
+		final int NUMERO_MODULOS = 6;
+		final int NUMERO_NOTAS = 6;
+		String nombreCompleto;
+		String[] modulos = new String[NUMERO_OPCIONES];
+		String[] notas = new String[NUMERO_NOTAS];
+		int contadorModulos = 0;
+		int contadorNotas = 0;
+
+		nombreCompleto = JOptionPane.showInputDialog("Introduce tu nombre completo (nombre y apellidos)", null);
+		
+		do {
+			modulos[contadorModulos] = JOptionPane.showInputDialog("Introduce los modulos que tienes que cursar " + (contadorModulos + 1) + " / 6", null);
+			contadorModulos++;
+		} while (contadorModulos < NUMERO_MODULOS);
+		
+		String[] opciones = { modulos[0], modulos[1], modulos[2], modulos[3], modulos[4], modulos[5], modulos[6] = "Resumen" }; 
+		String [] notasModulos = { notas[0], notas[1], notas[2], notas[3], notas[4], notas[5] };
+		
+	
+		do {
+		int opcionesModulos = JOptionPane.showOptionDialog(null, "Introduce una nota para cada uno de los módulos o visualiza un resumen del curso: ",
+				"Módulos de " + WordUtils.capitalizeFully(nombreCompleto), JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, cambioString(opciones), modulos[6]);
+																																		//como poner que me ponga las iniciales en todos los modulos que tengo
+
+		notas[contadorNotas] = JOptionPane.showInputDialog("Introduce la nota del modulo seleccionado", NumberUtils.compare(0, 10));
+			contadorNotas++;
+							
+		
+		} while (contadorNotas < NUMERO_NOTAS);
+		
+		JOptionPane.showMessageDialog(null, modulos[0] + ": " + notas[0] + "\n" + modulos[1] + ": " + notas[1] + "\n" +  modulos[2] + ": " + notas[2] + "\n" + modulos[3] + ": " + notas[3] + "\n" +  modulos[4] + ": " + notas[4] + "\n" + modulos[5] + ": " + notas[5] + "\n",
+										"RESUMEN de notas de " + WordUtils.capitalize(nombreCompleto), JOptionPane.PLAIN_MESSAGE );
+																				 	 
+	}	
+	
+	public static String cambioString (String opciones[]) {
+		String notas = null;
+		notas = opciones.toString();
+		return notas;
+		
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,132 @@
+package practica4;
+
+import java.util.Scanner;
+
+public class ClaseString {
+    private static Scanner scanner = new Scanner(System.in);
+    private static String texto;
+
+    public static void main(String[] args) {
+        System.out.println("Introduce un texto:");
+        texto = scanner.nextLine();
+        
+        int opcion;
+        do {
+            mostrarMenu();
+            opcion = Integer.parseInt(scanner.nextLine());
+            ejecutarOpcion(opcion);
+        } while (opcion != 0);
+    }
+
+    public static void mostrarMenu() {
+        System.out.println("\nMenú de opciones:");
+        System.out.println("1. Evaluar longitud del texto");
+        System.out.println("2. Comprobar si el texto termina en punto");
+        System.out.println("3. Convertir la primera palabra a mayúsculas");
+        System.out.println("4. Eliminar espacios en blanco del texto");
+        System.out.println("5. Contar vocales en el texto");
+        System.out.println("6. Contar ocurrencias de una cadena en el texto");
+        System.out.println("7. Mostrar el texto al revés");
+        System.out.println("0. Salir");
+        System.out.print("Elige una opción: ");
+    }
+
+    public static void ejecutarOpcion(int opcion) {
+        switch (opcion) {
+            case 1:
+                evaluarLongitudTexto();
+                break;
+            case 2:
+                comprobarFinalEnPunto();
+                break;
+            case 3:
+                primeraPalabraMayuscula();
+                break;
+            case 4:
+                eliminarEspacios();
+                break;
+            case 5:
+                contarVocales();
+                break;
+            case 6:
+                contarOcurrencias();
+                break;
+            case 7:
+                textoAlReves();
+                break;
+            case 0:
+                System.out.println("Saliendo del programa...");
+                break;
+            default:
+                System.out.println("Opción no válida, por favor elige otra.");
+        }
+    }
+
+    public static void evaluarLongitudTexto() {
+        int longitud = texto.length();
+        if (longitud > 25) {
+            System.out.println("Texto largo");
+        } else if (longitud >= 10) {
+            System.out.println("Texto medio");
+        } else if (longitud > 0) {
+            System.out.println("Texto corto");
+        } else {
+            System.out.println("Texto vacío");
+        }
+    }
+
+    public static void comprobarFinalEnPunto() {
+        if (texto.endsWith(".")) {
+            System.out.println("El texto acaba en punto");
+        } else {
+            System.out.println("El texto no acaba en punto");
+        }
+    }
+
+    public static void primeraPalabraMayuscula() {
+        int primerEspacio = texto.indexOf(" ");
+        if (primerEspacio == -1) {
+            System.out.println(texto.toUpperCase());
+        } else {
+            String primeraPalabra = texto.substring(0, primerEspacio).toUpperCase();
+            String restoTexto = texto.substring(primerEspacio);
+            System.out.println(primeraPalabra + restoTexto);
+        }
+    }
+
+    public static void eliminarEspacios() {
+        System.out.println(texto.replace(" ", ""));
+    }
+
+    public static void contarVocales() {
+        int contador = 0;
+        String vocales = "aeiouAEIOU";
+        for (char c : texto.toCharArray()) {
+            if (vocales.indexOf(c) != -1) {
+                contador++;
+            }
+        }
+        System.out.println("Número de vocales: " + contador);
+    }
+
+    public static void contarOcurrencias() {
+        System.out.println("Introduce una cadena para buscar en el texto:");
+        String cadena = scanner.nextLine();
+        int index = texto.indexOf(cadena);
+        int contador = 0;
+
+        while (index != -1) {
+            System.out.println("Cadena encontrada en la posición: " + index);
+            contador++;
+            index = texto.indexOf(cadena, index + 1);
+        }
+
+        System.out.println("Número de ocurrencias: " + contador);
+    }
+
+    public static void textoAlReves() {
+        StringBuilder textoInvertido = new StringBuilder(texto);
+        textoInvertido.reverse();
+        System.out.println(textoInvertido.toString());
+    }
+}
