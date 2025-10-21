@@ -1,0 +1,35 @@
+elementos_quimicos {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #D8A7D8; 
+    padding: 20px;
+    justify-content: center;
+}
+
+elemento {
+    background-color: #00FFFF; 
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+nombre {
+    font-size: 12px;
+}
+
+nomenclatura {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+valencia {
+    font-size: 12px;
+}

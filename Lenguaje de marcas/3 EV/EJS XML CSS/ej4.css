@@ -1,0 +1,68 @@
+centros {
+    display: block;
+    list-style: decimal;
+}
+
+ies {
+    display: block;
+    counter-reset: contador2;
+}
+
+nombreCentro {
+    font-size: 130%;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+nombre {
+    display: block;
+    margin-bottom: 2px;
+    margin-left: 15px;
+}
+
+grado {
+    display: block;
+    display: list-item;
+    list-style: inside;
+    list-style: lower-alpha;
+    margin-bottom: 2px;
+    margin-left: 55px;
+}
+
+decretoTitulo {
+    display: block;
+    display: list-item;
+    list-style: inside;
+    list-style: lower-alpha;
+    margin-bottom: 2px;
+    margin-left: 55px;
+    margin-bottom: 5px;
+}
+
+web {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+centros::before {
+    content: "Centros de formación";
+    color: red;
+    display: block;
+    font-size: 180%;
+    font-weight: bold;
+    margin-bottom: 10px;
+    counter-reset: contador;
+}
+
+nombre::before {
+    content: counter(contador) " . " counter(contador2) ". ";
+    counter-increment: contador2;
+}
+
+nombreCentro::before {
+    content: counter(contador) " . ";
+    counter-increment: contador;
+    font-size: 100%;
+}

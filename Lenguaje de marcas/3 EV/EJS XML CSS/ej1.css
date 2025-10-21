@@ -1,0 +1,28 @@
+biblioteca {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: pink;
+  }
+  
+  libro {
+    border: 2px dashed #0000ff;
+    background-color: #00ffff;
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  titulo {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+    background-color: white;
+  }
+  
+  autor, fechaPublicacion {
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  

@@ -1,0 +1,35 @@
+productos::before {
+    content: "Productos a la venta";
+    font-size: 160%;
+    display: block;
+    margin-bottom: 4px;
+}
+
+producto {
+    display: table-row;
+
+}
+
+cabecera {
+    background-color: aqua;
+    display: table-row;
+    text-align: center;
+    font-size: 100%;
+    border: solid blue;
+    
+}
+
+cabecera > * {
+    display: table-cell;
+    background-color: aqua;
+    border: 1px solid blue;
+    padding: 8px;
+    font-weight: bold;
+}
+
+producto > * {
+    display: table-cell;
+    border: 1px solid blue;
+    text-align: center;
+    padding: 2px;
+}
