@@ -1,0 +1,50 @@
+package Correccion;
+
+import java.util.Scanner;
+
+public class YoutubeAds {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String nombreCanal;
+		String nombreYoutuber;
+		int anoNacimioentoYoutuber;
+		int numeroSuscriptores;
+		boolean esContenidoInfantil = false;
+		int respuestaContenidoInfantil;
+		
+		System.out.print("Introduce el nombre del canal: ");
+		nombreCanal = sc.nextLine();
+		
+		System.out.print("Introduce el nombre del youtuber: ");
+		nombreYoutuber = sc.nextLine();
+		
+		System.out.print("Introduce la edad del youtuber: ");
+		anoNacimioentoYoutuber = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.print("Introduce el numero de suscriotores: ");
+		numeroSuscriptores = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.print("Introduce si el canal es de contenido infantil (1-Si / 2-No): ");
+		respuestaContenidoInfantil = sc.nextInt();
+		if (respuestaContenidoInfantil == 1) {
+			esContenidoInfantil = true;
+		} else if (respuestaContenidoInfantil == 2) {
+			esContenidoInfantil = false;
+		}
+
+		Youtuber youtuber = new Youtuber();
+		youtuber.nombreCanal = nombreCanal;
+		youtuber.nombreYoutuber = nombreYoutuber;
+		youtuber.edad = anoNacimioentoYoutuber;
+		youtuber.numeroSuscriptores = numeroSuscriptores;
+		youtuber.esContenidoInfantil = esContenidoInfantil;
+		
+		youtuber.mostrarInfo();
+		
+	}
+
+}

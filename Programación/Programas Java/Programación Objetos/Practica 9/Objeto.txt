@@ -1,0 +1,141 @@
+package practica9;
+
+import javax.swing.JOptionPane;
+
+public class Coche {
+
+    final public String PRECIO_BASE;
+    final public String COLOR;
+    final public String GAMA;
+    final public String PESO;
+    final public String POTENCIA;
+    final public String CONSUMO;
+    public int precioFinal1;
+    public int precioFinal2;
+    public int precioFinal3;
+
+    public Coche() {
+        PRECIO_BASE = "12000";
+        COLOR = "Blanco";
+        GAMA = "Media";
+        PESO = "1500";
+        POTENCIA = "110";
+        CONSUMO = "5.5";
+        precioFinal1 = calcularPrecioFinal(PRECIO_BASE, GAMA, PESO, POTENCIA);
+        mostrarCocheDefecto(PRECIO_BASE, COLOR, GAMA, PESO, POTENCIA, CONSUMO);
+    }
+
+    public Coche(String precioBasePedido, String pesoPedido) {
+        PRECIO_BASE = precioBasePedido;
+        COLOR = "Blanco";
+        GAMA = "Media";
+        PESO = pesoPedido;
+        POTENCIA = "110";
+        CONSUMO = "5.5";
+        precioFinal2 = calcularPrecioFinal(precioBasePedido, GAMA, pesoPedido, POTENCIA);
+        mostrarCocheDosParametros(precioBasePedido, pesoPedido, GAMA, COLOR, POTENCIA, CONSUMO);
+    }
+
+    public Coche(String precioBasePedido, String colorPedido, String gamaPedido, String pesoPedido, String potenciaPedido, String consumoPedido) {
+        PRECIO_BASE = precioBasePedido;
+        COLOR = comprobarColor(colorPedido);
+        GAMA = comprobarGama(gamaPedido);
+        PESO = pesoPedido;
+        POTENCIA = potenciaPedido;
+        CONSUMO = consumoPedido;
+        precioFinal3 = calcularPrecioFinal(precioBasePedido, gamaPedido, pesoPedido, potenciaPedido);
+        mostrarCocheTodosParametros(precioBasePedido, COLOR, GAMA, PESO, POTENCIA, CONSUMO);
+    }
+
+    public void mostrarCocheDefecto(String precioBase, String color, String gama, String peso, String potencia, String consumo) {
+        JOptionPane.showMessageDialog(null, "Precio: " + precioBase + "€\n" 
+                + "Color: " + color + "\n" 
+                + "Gama: " + gama + "\n" 
+                + "Peso: " + peso + "Kg\n" 
+                + "Potencia: " + potencia + "CV\n" 
+                + "Consumo: " + consumo + " litros/100Km");
+    }
+
+    public void mostrarCocheDosParametros(String precioBasePedido, String pesoPedido, String gama, String color, String potencia, String consumo) {
+        JOptionPane.showMessageDialog(null, "Precio: " + precioBasePedido + "€\n" 
+                + "Color: " + color + "\n" 
+                + "Gama: " + gama + "\n" 
+                + "Peso: " + pesoPedido + "Kg\n" 
+                + "Potencia: " + potencia + "CV\n" 
+                + "Consumo: " + consumo + " litros/100Km");
+    }
+
+    public void mostrarCocheTodosParametros(String precioBasePedido, String colorPedido, String gamaPedido, String pesoPedido, String potenciaPedido, String consumoPedido) {
+        JOptionPane.showMessageDialog(null, "Precio: " + precioBasePedido + "€\n" 
+                + "Color: " + colorPedido + "\n" 
+                + "Gama: " + gamaPedido + "\n" 
+                + "Peso: " + pesoPedido + "Kg\n" 
+                + "Potencia: " + potenciaPedido + "CV\n" 
+                + "Consumo: " + consumoPedido + " litros/100Km");
+    }
+
+    public String comprobarGama(String gamaInicial) {
+        String gama = gamaInicial;
+        if (!esGamaValida(gama)) {
+            gama = JOptionPane.showInputDialog(null, "La gama introducida (" + gama + ") no es válida.\n" 
+                    + "Introduce una gama válida: Alta, Media o Baja", "Entrada de gama", JOptionPane.QUESTION_MESSAGE);
+            if (gama == null) {
+                JOptionPane.showMessageDialog(null, "No se ingresó ninguna gama. Operación cancelada.", "Error", JOptionPane.ERROR_MESSAGE);
+                return "Media"; // valor por defecto
+            }
+        }
+        return gama;
+    }
+
+    public boolean esGamaValida(String gama) {
+        return gama.equalsIgnoreCase("Alta") || gama.equalsIgnoreCase("Media") || gama.equalsIgnoreCase("Baja");
+    }
+
+    public String comprobarColor(String colorInicial) {
+        String color = colorInicial;
+        if (!esColorValido(color)) {
+            color = JOptionPane.showInputDialog(null, "El color introducido (" + color + ") no es válido.\n" 
+                    + "Introduce un color válido: Blanco, Negro, Rojo, Azul, Verde o Gris", "Entrada de color", JOptionPane.QUESTION_MESSAGE);
+            if (color == null) {
+                JOptionPane.showMessageDialog(null, "No se ingresó ningún color. Operación cancelada.", "Error", JOptionPane.ERROR_MESSAGE);
+                return "Blanco"; // valor por defecto
+            }
+        }
+        return color;
+    }
+
+    public boolean esColorValido(String color) {
+        return color.equalsIgnoreCase("Blanco") || color.equalsIgnoreCase("Negro") || color.equalsIgnoreCase("Rojo") || color.equalsIgnoreCase("Azul")
+                || color.equalsIgnoreCase("Verde") || color.equalsIgnoreCase("Gris");
+    }
+
+    public int calcularPrecioFinal(String precioDado, String gamaPedida, String pesoPedida, String potenciaPedida) {
+        int precioAñadido = 0;
+
+        if (gamaPedida.equals("Alta")) {
+            precioAñadido += 2000;
+        } else if (gamaPedida.equals("Media")) {
+            precioAñadido += 1200;
+        } else if (gamaPedida.equals("Baja")) {
+            precioAñadido += 600;
+        }
+
+        int peso = Integer.parseInt(pesoPedida);
+        if (peso < 1200) {
+            precioAñadido += 0;
+        } else if (peso >= 1200 && peso < 1400) {
+            precioAñadido += 350;
+        } else if (peso >= 1400 && peso < 1800) {
+            precioAñadido += 1000;
+        } else if (peso >= 1800) {
+            precioAñadido += 1500;
+        }
+
+        if (Integer.parseInt(potenciaPedida) > 110) {
+            precioAñadido += 800;
+        }
+
+        int precioTotal = Integer.parseInt(precioDado) + precioAñadido;
+        return precioTotal;
+    }
+}

@@ -1,0 +1,36 @@
+package Correccion;
+
+public class Youtuber {
+
+	public String nombreCanal;
+	public String nombreYoutuber;
+	public int edad;
+	public int numeroSuscriptores;
+	public boolean esContenidoInfantil;
+	
+	public void mostrarInfo () {
+			
+			System.out.println("Los datos del Youtuber son: ");
+			System.out.println(nombreCanal.toUpperCase());
+			System.out.println(nombreYoutuber);
+			System.out.println("Edad: " + edad + " años");
+			System.out.println(numeroSuscriptores + " suscriptores");
+			System.out.println("Infantil: " + (esContenidoInfantil ? "Si" : "No"));
+			
+		}
+		
+	public double calcularPrecio () {
+		return edad;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

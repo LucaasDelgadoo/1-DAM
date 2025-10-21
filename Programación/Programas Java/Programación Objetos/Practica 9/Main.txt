@@ -1,0 +1,45 @@
+package practica9;
+
+import javax.swing.JOptionPane;
+
+public class ProgramaPrincipalCoches {
+
+	public static void main(String[] args) {
+		
+		JOptionPane.showMessageDialog(null, "Bienvenido a la practica 9, aqui podra visualizar nuestro catalogo de vehículos.\n"
+				+ "Donde verá 3 vehiculos,\n"
+				+ "> El primero con valores por defecto.\n"
+				+ "> El segundo con un peso y precio inicial que introducira usted.\n"
+				+ "> El tercero con las caracteristicas que usted desee.");
+		
+		Coche objetoCoche = new Coche();
+		
+	
+		String precioBaseCoche2 = JOptionPane.showInputDialog("Introduce el precio del segundo vehiculo", null);
+		String pesoCoche2 = JOptionPane.showInputDialog("Introduce el peso del segundo vehiculo", null);
+		Coche objetoCoche2 = new Coche (precioBaseCoche2, pesoCoche2);
+		
+		
+		String precioBaseCoche3 = JOptionPane.showInputDialog("Introduce el precio del tercer vehiculo", null);
+		String pesoCoche3 = JOptionPane.showInputDialog("Introduce el peso del tercer vehiculo", null);
+		String gamaCoche3 = JOptionPane.showInputDialog("Introduce la gama del tercer vehiculo", null);
+		String colorCoche3 = JOptionPane.showInputDialog("Introduce el color del tercer vehiculo", null);
+		String potenciaCoche3 = JOptionPane.showInputDialog("Introduce la potencia del tercer vehiculo", null);
+		String consumoCoche3 = JOptionPane.showInputDialog("Introduce el consumo del tercer vehiculo", null);
+		Coche objetoCoche3 = new Coche (precioBaseCoche3, colorCoche3, gamaCoche3, pesoCoche3, potenciaCoche3, consumoCoche3);
+		
+		JOptionPane.showMessageDialog(null, "Ahora le mostraremos una tabla,\n"
+				+ "donde apareceran todos los precios de los vehiculos anteriores: ");
+	
+		int precio1 = objetoCoche.precioFinal1;
+		int precio2 = objetoCoche2.precioFinal2;
+		int precio3 = objetoCoche3.precioFinal3;
+		
+		JOptionPane.showMessageDialog(null, "Los precios de los vehiculos son:\n"
+				+ "Vehiculo 1: " + precio1 + "€\n"
+				+ "Vehiculo 2: " + precio2 + "€\n" 
+				+ "Vehiculo 3: " + precio3 + "€");
+		
+	}
+
+}
