@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<libro>
+		<capitulo>
+			<titulo>El inicio de una gran aventura</titulo>
+		</capitulo>
+		<capitulo>
+			<titulo>La llegada del comandante "Santo"</titulo>
+				<subcapitulo>
+					<titulo>El ataque de "Santo"</titulo>
+				</subcapitulo>
+				<subcapitulo>
+             		<titulo>"Santo recibe a el pueblo Hoki</titulo>
+				</subcapitulo>
+		</capitulo>
+		<capitulo>
+			<titulo>El pueblo Hoki se revela</titulo>
+		</capitulo>
+</libro>

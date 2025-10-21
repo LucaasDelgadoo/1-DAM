@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orden_de_pedido id="" fecha="" id_del_cliente="">
+    <factura id="456">
+      <nombre_empresa></nombre_empresa>
+      <direccion></direccion>
+      <nombre_ciudad></nombre_ciudad>
+      <codigo_postal></codigo_postal>
+    </factura>
+    <elemento_envio href="456"/> 
+    <pedido referencia="" cantidad_de_pedidos="">
+      <descripcion></descripcion>
+    </pedido>
+    <pedido referencia="" cantidad_de_pedidos="">
+      <descripcion></descripcion>
+    </pedido>
+</orden_de_pedido>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msg:mensaje xmlns:msg='http://www.prueba.com/mensaje' xmlns:po='http://www.prueba.com/orden_de_pedido'
+emisor="Yo" fecha_de_envio="Ayer" destino="Calle Marea">
+  <msg:texto>Hola esto es la practica 1</msg:texto>
+  <msg:adjunto>
+  <msg:descripcion>Entregar al profesor</msg:descripcion>
+  <msg:item>
+    <po:orden_de_pedido ID="4332424" fecha="23/7/2006" ID-Cliente="34512">
+      <po:factura id="456">
+        <po:nombre_empresa></po:nombre_empresa>
+        <po:direccion></po:direccion>
+        <po:nombre_ciudad></po:nombre_ciudad>
+        <po:codigo_postal></po:codigo_postal>
+      </po:factura>
+      <po:elemento_envio href="456"/> 
+      <pedido referencia="" cantidad_de_pedidos="">
+        <descripcion></descripcion>
+      </pedido>
+      <pedido referencia="" cantidad_de_pedidos="">
+        <descripcion></descripcion>
+      </pedido>
+    </po:orden_de_pedido>
+  </msg:item>
+  </msg:adjunto>
+    <msg:adjunto>
+  <msg:descripcion>Entregar al profesor</msg:descripcion>
+  <msg:item>
+    <po:orden_de_pedido ID="56456" fecha="12/9/2023" ID-Cliente="214378">
+      <po:factura id="790">
+        <po:nombre_empresa></po:nombre_empresa>
+        <po:direccion></po:direccion>
+        <po:nombre_ciudad></po:nombre_ciudad>
+        <po:codigo_postal></po:codigo_postal>
+      </po:factura>
+      <po:elemento_envio href="456"/> 
+      <pedido referencia="" cantidad_de_pedidos="">
+        <descripcion></descripcion>
+      </pedido>
+      <pedido referencia="" cantidad_de_pedidos="">
+        <descripcion></descripcion>
+      </pedido>
+    </po:orden_de_pedido>
+  </msg:item>
+  </msg:adjunto>
+</msg:mensaje>

@@ -1,0 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8" standole= "yes"?>
+ <biblioteca>
+	<libro genero="novela de ficcion">
+		<titulo>El Gran Gatsby</titulo>
+		<autor>F. Scott Fitzgerald</autor>
+		<editorial/>
+	</libro>
+	<libro genero="novela de accion">
+		<titulo>El Conquistador Español</titulo>
+		<autor>Rosa Peral</autor>
+		<editorial>Santillana</editorial>
+	</libro>
+ </biblioteca>

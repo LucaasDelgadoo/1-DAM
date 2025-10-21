@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bibli:biblioteca xmlns:bibli="http//www.Espacio_de_nombres_XML/biblioteca" nombre="Biblioteca Central" ubicacion="Ciudad X" xmls:lib="http//www.Espacio_de_nombres_XML/libro">
+  <lib:libro titulo="Cien años de soledad" autor="Gabriel García Márquez" anio="1967" genero="Ficción">
+     <lib:editorial>Editorial Sudamericana</lib:editorial>
+  </lib:libro >
+    <lib:libro titulo="Don Quijote de la Mancha" autor="Miguel de Cervantes" anio="1605" genero="">
+      <lib:editorial>Editorial Espasa</lib:editorial>
+    </lib:libro>
+    <lib:libro titulo="1984" autor="George Orwell Distopía" anio="1949" genero="">
+      <lib:editorial>Editorial Debolsillo</lib:editorial>
+    </lib:libro>
+</bibli:biblioteca>

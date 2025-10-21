@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<tarjeta_visita>
+  <apellido>DEL VALLE</apellido>
+  <nombre>Cristobal</nombre>
+  <sociedad/>
+  <profesion>Doctor</profesion>
+  <direccion/>
+    <numero>19</numero>
+    <calle>C/ Florida</calle>
+    <codigo_postal>18080</codigo_postal>
+  <poblacion>MADRID</poblacion>
+  <direccion/>
+  <numero_telefono>123456789</numero_telefono>
+  <numero_movil/>
+  <numero_fax/>
+  <correo_electronico/>
+</tarjeta_visita>
+
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<tarjeta_visita>
+  <apellido>DEL VALLE</apellido>
+  <nombre>Cristobal</nombre>
+  <sociedad/>
+  <profesion>Doctor</profesion>
+  <direccion>
+    <número>19</número>
+    <calle>C/ Florida</calle>
+    <codigo_postal>18080</codigo_postal>
+    <poblacion>MADRID</poblacion>
+  </direccion>
+  <numero_telefono>123456789</numero_telefono>
+  <numero_movil/>
+  <numero_fax/>
+  <correo_electronico/>
+</tarjeta_visita>

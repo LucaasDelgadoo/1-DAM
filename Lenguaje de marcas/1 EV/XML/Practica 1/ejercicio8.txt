@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<empresa>
+  <dir:direccion xmlns:dir="http://www.prueba.com/direccion">
+    <dir:calle>Avd. de Murcia</dir:calle> 
+    <dir:ciudad>Alicante</dir:ciudad> 
+    <dir:provincia>Alicante</dir:provincia>
+  </dir:direccion>
+  <serv:servidor xmlns:serv="http://www.prueba.com/servidor">
+    <serv:url>http://localhost</serv:url>
+    <serv:direccion>127.0.0.1</serv:direccion>
+  </serv:servidor>
+</empresa>

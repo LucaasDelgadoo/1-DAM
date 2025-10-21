@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <biblioteca>
+	<libro>
+		<titulo>Lenguaje de Marcas</titulo>
+		<autor>Yo mismo</autor>
+		<isbn>34783242</isbn>
+		<precio>12.99</precio>
+	</libro>
+	<libro>
+		<titulo>DAM</titulo>
+		<autor>Yo mismo</autor>
+		<autor>Mi amigo</autor>
+		<precio>12.99</precio>
+	</libro>
+	<libro>
+	  <titulo>DAW</titulo>
+   <autor>Yo mismo</autor>
+    <isbn/>
+    <precio>12.99</precio>
+  </libro>
+  <libro>
+    <titulo>Bases de datos</titulo>
+    <autor>Yo mismo</autor>
+    <isbn>3487824729</isbn>
+    <precio>32.99</precio>
+    <precio>12.99</precio>
+  </libro>
+  <libro>
+   <titulo>FOL</titulo>
+   <autor>Yo mismo</autor>
+   <isbn>9837484</isbn>
+   <precio/>
+  </libro>
+ </biblioteca>

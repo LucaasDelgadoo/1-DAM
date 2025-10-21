@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standole= "yes"?>
+	<Documentos>
+		<Archivo>
+			<nombre>Ciudades</nombre>
+			<contenido>Burgos</contenido>
+		</Archivo>
+		<Archivo>
+			<nombre>Libros</nombre>
+			<contenido>Libros de accion</contenido>
+		</Archivo>
+		<Archivo>
+			<nombre>Coches</nombre>
+			<contenido>Marcas de coches</contenido>
+		</Archivo>
+	</Documentos>
+	

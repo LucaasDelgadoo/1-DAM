@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<raices>
+  <raiz>
+    <elemento1> Valor 1 </elemento1>
+    <elemento2 id="8">Valor 2</elemento2>
+    <elemento3>Valor 3</elemento3>
+  </raiz>
+  <raiz>
+    <elemento1>Valor 11</elemento1>
+    <xmelemento id="3">Valor 22</xmelemento>
+    <elemento3>Valor 33</elemento3>
+    <elemento4 id="34"/>
+    <elemento5 valor="prueba"/>
+  </raiz>
+</raices>
