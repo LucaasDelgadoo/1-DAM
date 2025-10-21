@@ -1,0 +1,58 @@
+EN LAS CONSULTAS CON UNION, UNION ALL, INTERSECT Y EXCEPT.
+    -- UNION ES PARA OBTENER LO QUE HAY EN LAS DOS CONSULTAS SIN ELEMENTOS DUPLICADOS
+    -- UNION ALL ES PARA OBTENER LO QUE HAY EN LAS DOS CONSULTAS CON ELEMENTOS DUPLICADOS
+    -- INTERSECT ES PARA OBTENER LO QUE HAY EN COMUN EN LAS DOS TABLAS, ES DECIR, EL MISMO ELEMENTO O VALOR
+    -- EXCEPTION conseguiremos todos los registros que devuelve la primera consulta excepto aquellos que coincidan con alguno de los que devuelva la segunda consulta   ES DECIR, QUE OBTENDREMOS LO QUE SOLO SE ENCUENTRE EN LA PRIMERA CONSULTA         Y NO ESTE EN LA SEGUNDA
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+EN LA CREACION DE VISTAS, SERAN DANDOLE A VIEWS EN LA BASE DE DATOS Y CREANDOLA USANDO LAS TABLAS Y ATRIBUTOS DE LAS TABLAS QUE SEAN NECESARIOS.
+DESPUES PARA CONSULTAR EN ELLA SE HARA CON UN SELECT. EJEMPLO -->   SELECT * FROM alumnos_Y_profesores WHERE ....
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PARA LAS TRANSACCIONES USAREMOS ESTA SINTAXIS
+
+BEGIN TRANSACTION; 
+
+BEGIN TRY 
+
+    //AQUI VAN LAS CONSULTAS QUE TENGAMOS QUE PONER 
+
+    COMMIT; -- Si todo va bien, confirmamos los cambios 
+
+    PRINT 'Transacción completada con éxito.'; 
+
+END TRY 
+
+BEGIN CATCH 
+
+    ROLLBACK; -- Si hay un error, cancelamos todo 
+
+    PRINT 'Error en la transacción. Se han deshecho los  
+
+    cambios.'; 
+
+END CATCH; 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PARA LOS PROCEDIMIENTOS USAREMOS ESTA SINTAXIS
+
+CREATE PROCEDURE //PONEMOS EL NOMBRE DEL PROCEDIMIENTO 
+
+//PONEMOS LAS VARIABLES QUE TENEMOS QUE PASARLE AL PROCEDIMIENTO 
+
+AS  
+
+BEGIN  
+
+    //AQUI VAN LAS CONSULTAS Y DECLARACIONES DE VARIABLES QUE TENGAMOS QUE PONER
+
+END;  
+
+//SI TENEMOS UN OUTPUT EN LAS VARIABLES DEL PRINCIPIO, DECLARAMOS UNA DESPUES DEL END CON EL MISMO TIPO DE VARIABLE
+
+EXEC //NOMBRE DEL PROCEDIMIENTO //VARIABLES QUE TENGAMOS QUE PASARLE SEPARADOS POR "," (COMA) Y EL OUTPUT AL FINAL, PONIENDO EL NOMBRE DE LA VARIBALE Y POSTERIORMENTE EL "OUTPUT"
+
+PRINT //NOMBRE DE LA VARIABLE QUE TIENE EL OUTPUT
